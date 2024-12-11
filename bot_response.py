@@ -2,7 +2,6 @@ from connections import openai_connection, pinecone_connection
 from pinecone import Pinecone
 from openai import OpenAI
 
-
 def fetch_from_pinecone(skills: list):
     '''
     Function to fetch data from Pinecone and generate markdown table.
@@ -35,7 +34,9 @@ def fetch_from_pinecone(skills: list):
             metadata = course['metadata']
             course_id = metadata['Course ID']
             course_name = metadata['Course Name']
+            score = round(course['score'] * 100, 2)
             markdown_output.append(f"### {course_id}: {course_name}\n")
+            markdown_output.append(f"**Score:** {score}%\n")
             markdown_output.append("| Instructor | Timings | CRN |")
             markdown_output.append("|------------|---------|-----|")
             for instructor, timing, crn in zip(metadata['Instructors'], metadata['Timings'], metadata['CRNs']):
@@ -87,7 +88,7 @@ def generate_response(question: str, context: str):
         print("Exception in generate_response() function: ", e)
         return "Failed to generate response."
 
-'''
+
 if __name__ == "__main__":
 
     # Step 1: Fetch courses and display markdown on frontend
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     matches, markdown_result = fetch_from_pinecone(skills)
 
     if markdown_result != "failed":
-        print("Displaying Markdown Table:")
+        print("Displaying Markdown Table:\n")
         # This will go to the frontend in a real application
         print(markdown_result)
 
@@ -105,6 +106,5 @@ if __name__ == "__main__":
     # Use markdown result as context for the query
     response = generate_response(question, matches)
 
-    print("\nGenerated Response:")
+    print("\nGenerated Response:\n")
     print(response)
-'''
