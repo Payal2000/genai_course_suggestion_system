@@ -1,5 +1,7 @@
+from json import load
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 
 def pinecone_connection():
     try:
@@ -9,7 +11,6 @@ def pinecone_connection():
     except Exception as e:
         print("Exception in pinecone_connection function: ", e)
         return
-
 
 def openai_connection():
     try:
