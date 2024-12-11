@@ -1,6 +1,6 @@
 from scraper import scrape_iframe_page
 from pdf_handler import extract_and_clean_pdf_text, extract_course_description
-from utils import save_to_csv, save_to_txt
+from data_generation.utils import save_to_csv, save_to_txt
 import pandas as pd
 
 def main():
@@ -16,9 +16,9 @@ def main():
     courses_df['Course Name'] = courses_df['Course Name'].str.replace(r'^[A-Z]+ \d{4}-\d{2} ', '', regex=True)
 
     # Extract and clean PDF text
-    pdf_path = "/path/to/CourseDescriptions.pdf"
+    pdf_path = "./input/CourseDescriptions.pdf"
     cleaned_text = extract_and_clean_pdf_text(pdf_path)
-    save_to_txt(cleaned_text, "/path/to/CleanedCourseDescriptions.txt")
+    save_to_txt(cleaned_text, "./output/CleanedCourseDescriptions.txt")
 
     # Extract course descriptions
     courses_df["Course Description"] = courses_df["CourseID"].apply(
@@ -26,7 +26,7 @@ def main():
     )
 
     # Save to CSV
-    save_to_csv(courses_df, "/path/to/ExtractedCourseDescriptions.csv")
+    save_to_csv(courses_df, "./output/ExtractedCourseDescriptions.csv")
 
 
 if __name__ == "__main__":
