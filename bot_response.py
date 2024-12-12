@@ -35,6 +35,7 @@ def fetch_from_pinecone(skills: list):
             course_id = metadata['Course ID']
             course_name = metadata['Course Name']
             score = round(course['score'] * 100, 2)
+        
             markdown_output.append(f"### {course_id}: {course_name}\n")
             markdown_output.append(f"**Score:** {score}%\n")
             markdown_output.append("| Instructor | Timings | CRN |")
@@ -90,7 +91,7 @@ def generate_response(question: str, context: str):
 
 
 if __name__ == "__main__":
-
+    
     # Step 1: Fetch courses and display markdown on frontend
     skills = ['machine learning', 'data science', 'programming']
     matches, markdown_result = fetch_from_pinecone(skills)
@@ -99,12 +100,13 @@ if __name__ == "__main__":
         print("Displaying Markdown Table:\n")
         # This will go to the frontend in a real application
         print(markdown_result)
-
+    
+    '''
     # Step 2: User asks a question
     question = "Does the best course teach fundamentals of leetcode?"
-
     # Use markdown result as context for the query
     response = generate_response(question, matches)
 
-    print("\nGenerated Response:\n")
+    print("Generated Response:\n")
     print(response)
+    '''
