@@ -269,5 +269,7 @@ def main():
     # Footer
     st.markdown("<div class='footer'>© 2024 Northeastern University. All rights reserved.</div>", unsafe_allow_html=True)
 
+'''
 if __name__ == "__main__":
     main()
+'''

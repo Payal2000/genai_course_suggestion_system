@@ -92,7 +92,7 @@ def generate_response(question: str, context: str):
         print("Exception in generate_response() function: ", e)
         return "Failed to generate response."
 
-
+'''
 if __name__ == "__main__":
 
     # Step 1: Fetch courses and display markdown on frontend
@@ -112,3 +112,4 @@ if __name__ == "__main__":
 
     print("\nGenerated Response:\n")
     print(response)
+'''
