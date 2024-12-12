@@ -91,25 +91,3 @@ def generate_response(question: str, context: str):
     except Exception as e:
         print("Exception in generate_response() function: ", e)
         return "Failed to generate response."
-
-'''
-if __name__ == "__main__":
-
-    # Step 1: Fetch courses and display markdown on frontend
-    skills = ['machine learning', 'data science', 'programming']
-    matches, markdown_result = fetch_from_pinecone(skills)
-
-    if markdown_result != "failed":
-        print("Displaying Markdown Table:\n")
-        # This will go to the frontend in a real application
-        print(markdown_result)
-
-    # Step 2: User asks a question
-    question = "Does the best course teach fundamentals of leetcode?"
-
-    # Use markdown result as context for the query
-    response = generate_response(question, matches)
-
-    print("\nGenerated Response:\n")
-    print(response)
-'''
