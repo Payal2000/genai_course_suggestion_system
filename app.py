@@ -14,12 +14,16 @@ def split_instructors(instructors_string):
 
 
 def handle_message():
-    user_message = st.session_state.user_message
+    user_message = st.session_state.user_message.strip()
     if user_message:
-        st.session_state.messages.append(f"You: {user_message}")
-        # Replace "" with relevant context or use Pinecone to fetch
+        # Add user's message to session
+        st.session_state.messages.append(
+            {"role": "user", "content": user_message})
+        # Generate GPT response
         response = generate_response(user_message, "")
-        st.session_state.messages.append(f"GPT: {response}")
+        st.session_state.messages.append(
+            {"role": "assistant", "content": response})
+        # Clear input box
         st.session_state.user_message = ""
 
 # Set up Streamlit page
@@ -209,13 +213,6 @@ if 'messages' not in st.session_state:
     st.session_state.messages = []
 
 
-
-st.text_input("Message ChatGPT", key="user_message", on_change=handle_message, placeholder="Type your message...")
-
-# Display chat messages
-for message in st.session_state.messages:
-    st.markdown(f"<p>{message}</p>", unsafe_allow_html=True)
-
 # Get course recommendations based on selected skills
 if "recommendations" not in st.session_state:
     st.session_state.recommendations = None
@@ -234,6 +231,42 @@ if st.sidebar.button("Get Recommendations"):
 
 # Display recommendations as cards if they exist in the session state
 if st.session_state.recommendations:
+    # Display chat section
+    st.markdown("<h3>Chat with CourseNavigator Bot</h3>", unsafe_allow_html=True)
+
+    # Display chat messages dynamically
+    for message in st.session_state.messages:
+        if message["role"] == "user":
+            st.markdown(
+                f"""
+            <div style='text-align: right; margin: 10px;'>
+                <div style='display: inline-block; background-color: #f1f1f1; color: #333333; padding: 10px;  border: 1px solid #d1d1d1; border-radius: 15px; max-width: 60%;'>
+                    {message["content"]}
+                </div>
+            </div>
+            """,
+                unsafe_allow_html=True,
+            )
+        elif message["role"] == "assistant":
+            st.markdown(
+                f"""
+                <div style='text-align: left; margin: 10px;'>
+                    <div style='display: inline-block; background-color: #f8d7da; padding: 10px; border-radius: 15px; max-width: 60%;'>
+                        {message["content"]}
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+    # Input box for user to type their message
+    st.text_input(
+        "Type your message:",
+        key="user_message",
+        on_change=handle_message,
+        placeholder="Ask about course details, timings, or more...",
+    )
+    
     for course in st.session_state.recommendations:
         metadata = course['metadata']
         course_id = metadata['Course ID']
@@ -261,3 +294,4 @@ if st.session_state.recommendations:
             """,
             unsafe_allow_html=True,
         )
+    
