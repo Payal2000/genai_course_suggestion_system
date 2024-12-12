@@ -63,8 +63,11 @@ def generate_response(question: str, context: str):
         openai_client = OpenAI(api_key=api_key)
 
         # Prompt to OpenAI for generating analysis of the question
-        prompt = f"Answer the question based on the recommendations provided in the context below. Answer in a professional manner without stating that context is involved.\n\nContext:\n{
-            context}\n\nQuestion: {question}\n"
+        prompt = (
+    f"Answer the question based on the recommendations provided in the context below. "
+    f"Answer in a professional manner without stating that context is involved.\n\n"
+    f"Context:\n{context}\n\nQuestion: {question}\n"
+)
 
         # Generate response from OpenAI
         response = openai_client.chat.completions.create(
@@ -89,22 +92,23 @@ def generate_response(question: str, context: str):
         return "Failed to generate response."
 
 
-if __name__ == "__main__":
+### Blocked code for testing purposes
+# if __name__ == "__main__":
 
-    # Step 1: Fetch courses and display markdown on frontend
-    skills = ['machine learning', 'data science', 'programming']
-    matches, markdown_result = fetch_from_pinecone(skills)
+#     # Step 1: Fetch courses and display markdown on frontend
+#     skills = ['machine learning', 'data science', 'programming']
+#     matches, markdown_result = fetch_from_pinecone(skills)
 
-    if markdown_result != "failed":
-        print("Displaying Markdown Table:\n")
-        # This will go to the frontend in a real application
-        print(markdown_result)
+#     if markdown_result != "failed":
+#         print("Displaying Markdown Table:\n")
+#         # This will go to the frontend in a real application
+#         print(markdown_result)
 
-    # Step 2: User asks a question
-    question = "Does the best course teach fundamentals of leetcode?"
+#     # Step 2: User asks a question
+#     question = "Does the best course teach fundamentals of leetcode?"
 
-    # Use markdown result as context for the query
-    response = generate_response(question, matches)
+#     # Use markdown result as context for the query
+#     response = generate_response(question, matches)
 
-    print("\nGenerated Response:\n")
-    print(response)
+#     print("\nGenerated Response:\n")
+#     print(response) 

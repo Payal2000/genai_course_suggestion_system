@@ -44,12 +44,12 @@ def storing_pinecone():
             data = row['Grouped Data']
 
             details = (
-                f"{course_id} {data['Course Name']} {
-                    data['Course Description']} "
-                f"CRNs: {', '.join(map(str, data['CRNs']))} "
-                f"Instructors: {', '.join(data['Instructors'])} "
-                f"Timings: {', '.join(data['Timings'])}"
-            )
+    f"{course_id} {data['Course Name']} {data['Course Description']} "
+    f"CRNs: {', '.join(map(str, data['CRNs']))} "
+    f"Instructors: {', '.join(data['Instructors'])} "
+    f"Timings: {', '.join(data['Timings'])}"
+)
+
 
 
             # Embedding data
