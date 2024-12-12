@@ -1,7 +1,5 @@
 # CourseNavigator: An AI-Powered Chatbot for Personalized Graduate Course Exploration 	
 
-### **An AI-Powered Chatbot for Course Recommendation**
-
 ## Live application links
 
 [![documentation](https://img.shields.io/badge/documentation-4285F4?style=for-the-badge&logo=&logoColor=white)](https://docs.google.com/document/d/19PfRgivAzZNAu2zFPn8JIHoUOk8DpB5lDd07NlGitpc/edit?tab=t.0)
