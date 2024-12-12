@@ -4,7 +4,4 @@ streamlit
 openai
 pypdf
 python-dotenv
-scraper
-pdf_handler
-bs4
 pandas
