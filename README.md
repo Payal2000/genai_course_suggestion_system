@@ -3,13 +3,13 @@
 ## Live application links
 
 [![documentation](https://img.shields.io/badge/documentation-4285F4?style=for-the-badge&logo=&logoColor=white)](https://docs.google.com/document/d/19PfRgivAzZNAu2zFPn8JIHoUOk8DpB5lDd07NlGitpc/edit?tab=t.0)
-
+[![Live App](https://img.shields.io/badge/Live_App-2C2D72?style=for-the-badge&logo=&logoColor=white)](https://coursesuggestionsystem.streamlit.app/)
 [![Demo](https://img.shields.io/badge/Demo_Link-808080?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/yw4AyXYgTtY)
 
 ## Tools & Technologies
 
 [![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Pinecone](https://img.shields.io/badge/Pinecone-0078FF?style=for-the-badge)](https://www.pinecone.io/)
+[![Pinecone](https://img.shields.io/badge/Pinecone-0078FF?style=for-the-badge&logo=pinecone&logoColor=white)](https://www.pinecone.io/)
 [![OpenAI](https://img.shields.io/badge/OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
 [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)](https://www.python.org/)
