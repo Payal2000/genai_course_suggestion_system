@@ -4,7 +4,7 @@
 
 [![documentation](https://img.shields.io/badge/documentation-4285F4?style=for-the-badge&logo=&logoColor=white)](https://docs.google.com/document/d/19PfRgivAzZNAu2zFPn8JIHoUOk8DpB5lDd07NlGitpc/edit?tab=t.0)
 [![Live App](https://img.shields.io/badge/Live_App-2C2D72?style=for-the-badge&logo=&logoColor=white)](https://coursesuggestionsystem.streamlit.app/)
-[![Demo](https://img.shields.io/badge/Demo_Link-808080?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/yw4AyXYgTtY)
+[![Demo](https://img.shields.io/badge/Demo_Link-808080?style=for-the-badge&logo=YouTube&logoColor=white)](https://youtu.be/kzin0pkmf30)
 
 ## Tools & Technologies
 
